@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+    <!-- Canonical URL for consistent previews -->
+    <link rel="canonical" href="https://nuoihieu.vercel.app/" />
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="/logo.png" type="image/png" sizes="32x32" />
+    <link rel="shortcut icon" href="/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Nuoihieu" />
+    <meta name="description" content="Website Nuoihieu — chia sẻ nội dung hữu ích." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nuoihieu.vercel.app/" />
+    <meta property="og:title" content="Nuoihieu" />
+    <meta property="og:description" content="Website Nuoihieu — chia sẻ nội dung hữu ích." />
+    <meta property="og:image" content="https://nuoihieu.vercel.app/logo.png" />
+    <meta property="og:site_name" content="Nuoihieu" />
+    <meta property="og:locale" content="vi_VN" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://nuoihieu.vercel.app/" />
+    <meta name="twitter:title" content="Nuoihieu" />
+    <meta name="twitter:description" content="Website Nuoihieu — chia sẻ nội dung hữu ích." />
+    <meta name="twitter:image" content="https://nuoihieu.vercel.app/logo.png" />
+    <!-- Optional: set your handle
+    <meta name="twitter:site" content="@your_handle" />
+    <meta name="twitter:creator" content="@your_handle" />
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dự Án Nuôi Hiếu - Phiên Bản Giáng Sinh</title>
+    <title>Giải Cứu Hiếu Dev - Noel 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@400;700&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-red': '#D42426',     /* Màu đỏ Noel */
-                        'brand-green': '#165B33',   /* Màu xanh thông */
-                        'brand-gold': '#F8B229',    /* Màu vàng chuông */
-                        'brand-cream': '#F3F4F6',
-                        'brand-orange': '#FF6B6B',  /* Giữ màu cũ làm accent */
+                        'brand-red': '#E63946',     /* Đỏ Noel nhưng hiện đại */
+                        'brand-green': '#2A9D8F',   /* Xanh Code */
+                        'brand-dark': '#1D3557',    /* Màu IDE (Dark mode) */
+                        'brand-cream': '#F1FAEE',   /* Màu nền nhẹ */
+                        'brand-gold': '#E9C46A',    /* Màu Warning */
                     },
                     fontFamily: {
                         'hand': ['"Patrick Hand"', 'cursive'],
@@ -27,10 +60,16 @@
         }
     </script>
     <style>
-        body { font-family: 'Nunito', sans-serif; overflow-x: hidden; }
-        .scroll-smooth { scroll-behavior: smooth; }
-        
-        /* --- HIỆU ỨNG TUYẾT RƠI --- */
+        body {
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+
+        /* --- HIỆU ỨNG TUYẾT RƠI (Code/Bug rơi) --- */
         .snowflake {
             position: fixed;
             top: -10px;
@@ -41,10 +80,44 @@
             animation-timing-function: linear;
             animation-iteration-count: infinite;
             pointer-events: none;
+            font-family: monospace;
         }
+
         @keyframes snowfall {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100vh); }
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* --- LED RGB GAMING --- */
+        .rgb-border {
+            animation: rgb-glow 3s linear infinite;
+        }
+
+        @keyframes rgb-glow {
+            0% {
+                border-color: #ff0000;
+                box-shadow: 0 0 10px #ff0000;
+            }
+
+            33% {
+                border-color: #00ff00;
+                box-shadow: 0 0 10px #00ff00;
+            }
+
+            66% {
+                border-color: #0000ff;
+                box-shadow: 0 0 10px #0000ff;
+            }
+
+            100% {
+                border-color: #ff0000;
+                box-shadow: 0 0 10px #ff0000;
+            }
         }
 
         /* --- DÂY ĐÈN TRANG TRÍ --- */
@@ -53,13 +126,14 @@
             white-space: nowrap;
             overflow: hidden;
             position: absolute;
-            z-index: 40; /* Dưới Navbar, trên nền */
+            z-index: 40;
             margin: -15px 0 0 0;
             padding: 0;
             pointer-events: none;
             width: 100%;
-            top: 60px; /* Điều chỉnh vị trí dưới navbar */
+            top: 60px;
         }
+
         .light-rope li {
             position: relative;
             animation-fill-mode: both;
@@ -78,210 +152,296 @@
             animation-name: flash-1;
             animation-duration: 2s;
         }
+
         .light-rope li:nth-child(2n+1) {
             background: #00ff00;
             box-shadow: 0px 4.66667px 24px 3px rgba(0, 255, 0, 0.5);
             animation-name: flash-2;
             animation-duration: 0.4s;
         }
+
         .light-rope li:nth-child(4n+2) {
             background: #ff0000;
             box-shadow: 0px 4.66667px 24px 3px rgba(255, 0, 0, 0.5);
             animation-name: flash-3;
             animation-duration: 1.1s;
         }
-        @keyframes flash-1 { 0%, 100% { background: #ffeb3b; box-shadow: 0px 4.66667px 24px 3px #ffeb3b; } 50% { background: rgba(255, 235, 59, 0.4); box-shadow: 0px 4.66667px 24px 3px rgba(255, 235, 59, 0.2); } }
-        @keyframes flash-2 { 0%, 100% { background: #00ff00; box-shadow: 0px 4.66667px 24px 3px #00ff00; } 50% { background: rgba(0, 255, 0, 0.4); box-shadow: 0px 4.66667px 24px 3px rgba(0, 255, 0, 0.2); } }
-        @keyframes flash-3 { 0%, 100% { background: #f00; box-shadow: 0px 4.66667px 24px 3px #f00; } 50% { background: rgba(255, 0, 0, 0.4); box-shadow: 0px 4.66667px 24px 3px rgba(255, 0, 0, 0.2); } }
 
-        /* Animation khác */
-        @keyframes wiggle { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-        .wiggle-hover:hover { animation: wiggle 0.5s ease-in-out infinite; }
-        @keyframes popIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-        .animate-pop { animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-        
-        .santa-hat {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            transform: rotate(-15deg);
-            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
-            z-index: 10;
+        @keyframes flash-1 {
+
+            0%,
+            100% {
+                background: #ffeb3b;
+                box-shadow: 0px 4.66667px 24px 3px #ffeb3b;
+            }
+
+            50% {
+                background: rgba(255, 235, 59, 0.4);
+                box-shadow: 0px 4.66667px 24px 3px rgba(255, 235, 59, 0.2);
+            }
         }
 
-        /* --- MỚI: HIỆU ỨNG THANH TRẠNG THÁI CANDY CANE --- */
-        @keyframes slideStripe {
-            0% { background-position: 0 0; }
-            100% { background-position: 30px 0; }
+        @keyframes flash-2 {
+
+            0%,
+            100% {
+                background: #00ff00;
+                box-shadow: 0px 4.66667px 24px 3px #00ff00;
+            }
+
+            50% {
+                background: rgba(0, 255, 0, 0.4);
+                box-shadow: 0px 4.66667px 24px 3px rgba(0, 255, 0, 0.2);
+            }
         }
-        .candy-cane-bar {
-            /* Hiệu ứng sọc chéo giống kẹo gậy */
-            background-image: repeating-linear-gradient(
-                45deg,
-                rgba(255, 255, 255, 0.3),
-                rgba(255, 255, 255, 0.3) 10px,
-                transparent 10px,
-                transparent 20px
-            );
+
+        @keyframes flash-3 {
+
+            0%,
+            100% {
+                background: #f00;
+                box-shadow: 0px 4.66667px 24px 3px #f00;
+            }
+
+            50% {
+                background: rgba(255, 0, 0, 0.4);
+                box-shadow: 0px 4.66667px 24px 3px rgba(255, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        .wiggle-hover:hover {
+            animation: wiggle 0.5s ease-in-out infinite;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-pop {
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        /* --- PROGRESS BAR KIỂU LOADING --- */
+        .loading-stripe {
+            background-image: repeating-linear-gradient(45deg,
+                    rgba(255, 255, 255, 0.15),
+                    rgba(255, 255, 255, 0.15) 10px,
+                    transparent 10px,
+                    transparent 20px);
             background-size: 30px 30px;
-            animation: slideStripe 1s linear infinite;
+            animation: moveStripe 1s linear infinite;
+        }
+
+        @keyframes moveStripe {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 30px 0;
+            }
         }
     </style>
 </head>
+
 <body class="bg-brand-cream text-gray-800 scroll-smooth relative">
 
-    <!-- Container Tuyết Rơi (Đã thêm lại để fix lỗi) -->
     <div id="snow-container"></div>
 
-    <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center relative">
-            <a href="#" class="text-2xl font-bold text-brand-red flex items-center gap-2 relative group">
-                <span class="text-3xl">🎅</span>
-                <span class="group-hover:text-brand-green transition-colors">Nuôi Hiếu</span>
+            <a href="#" class="text-2xl font-bold text-brand-dark flex items-center gap-2 relative group">
+                <span class="text-3xl">&lt;/&gt;</span>
+                <span class="group-hover:text-brand-red transition-colors font-mono">Hieu.Dev</span>
             </a>
             <div class="hidden md:flex space-x-6 font-bold text-gray-600">
-                <a href="#ve-du-an" class="hover:text-brand-red transition">Về Dự Án</a>
-                <a href="#goi-tai-tro" class="hover:text-brand-red transition">Gói Quà</a>
-                <a href="#minh-bach" class="hover:text-brand-red transition">Sao Kê</a>
-                <a href="#loi-chung" class="hover:text-brand-red transition">Lời Chứng</a>
+                <a href="#ve-du-an" class="hover:text-brand-red transition">Debug Cuộc Đời</a>
+                <a href="#goi-tai-tro" class="hover:text-brand-red transition">Donate Server</a>
+                <a href="#minh-bach" class="hover:text-brand-red transition">Sao Kê Lương</a>
+                <a href="#loi-chung" class="hover:text-brand-red transition">Review Của Boss</a>
             </div>
-            <button onclick="openCustomInput()" class="bg-brand-red text-white px-5 py-2 rounded-full font-bold shadow-lg hover:bg-brand-green transition wiggle-hover border-2 border-white ring-2 ring-brand-red ring-opacity-20">
-                <i class="fas fa-gift mr-1"></i> Lì Xì Noel
+            <button onclick="openCustomInput()"
+                class="bg-brand-red text-white px-5 py-2 rounded-full font-bold shadow-lg hover:bg-brand-green transition wiggle-hover border-2 border-white ring-2 ring-brand-red ring-opacity-20">
+                <i class="fas fa-coffee mr-1"></i> Buy me a coffee
             </button>
         </div>
-        <!-- Dây đèn treo ngay dưới navbar -->
         <ul class="light-rope hidden md:block">
-            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-40 pb-20 px-4 text-center bg-gradient-to-b from-white via-red-50 to-white relative overflow-hidden">
-        <!-- Decor blobs -->
-        <div class="absolute top-20 left-10 text-6xl opacity-20 rotate-12 animate-pulse">🎄</div>
-        <div class="absolute bottom-10 right-10 text-8xl opacity-20 -rotate-12 animate-bounce">🎁</div>
+    <section
+        class="pt-40 pb-20 px-4 text-center bg-gradient-to-b from-white via-gray-100 to-white relative overflow-hidden">
+        <div class="absolute top-20 left-10 text-6xl opacity-10 rotate-12 animate-pulse"><i class="fab fa-js"></i></div>
+        <div class="absolute bottom-10 right-10 text-8xl opacity-10 -rotate-12 animate-bounce"><i
+                class="fab fa-python"></i></div>
+        <div class="absolute top-40 right-20 text-5xl opacity-10 rotate-45"><i class="fas fa-bug"></i></div>
 
         <div class="container mx-auto max-w-4xl relative z-10">
-            <span class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block shadow-md">
-                🎄 Chiến dịch: Cứu đói mùa Giáng Sinh
+            <span
+                class="bg-brand-dark text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block shadow-md font-mono">
+                🛑 Error 404: Money Not Found
             </span>
             <div class="relative inline-block">
                 <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">
-                    Hãy trao cho Hiếu <br>
-                    <span class="text-brand-red font-hand">Một cốc cacao nóng</span>
+                    Cứu Hiếu Khỏi <br>
+                    <span class="text-brand-red font-hand">Bug & Sự Cô Đơn</span>
                 </h1>
-                <!-- Santa Hat Decor -->
-                <img src="https://api.iconify.design/noto:christmas-tree.svg" class="absolute -top-10 -right-10 w-20 h-20 opacity-80 hidden md:block" alt="Tree">
+                <img src="https://api.iconify.design/noto:christmas-tree.svg"
+                    class="absolute -top-10 -right-10 w-20 h-20 opacity-80 hidden md:block" alt="Tree">
             </div>
-            
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Noel này Hiếu vẫn cô đơn, nhưng Hiếu không muốn bị đói. Hãy giúp Hiếu có sức lực để chạy deadline xuyên đêm Giáng Sinh.
-            </p>
-            
-            <!-- Real-time Status (Đã Nâng Cấp) -->
-            <div class="bg-white p-6 rounded-2xl shadow-xl max-w-lg mx-auto mb-10 border-4 border-brand-red/20 relative group hover:border-brand-red transition duration-500">
-                <!-- Nơ trang trí -->
-                <div class="absolute -top-4 -left-4 text-4xl transform -rotate-45 z-10 filter drop-shadow-md">🎀</div>
 
-                <!-- Header: Tiêu đề + % -->
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Hiếu là một <b>Coder</b> kiêm <b>Nhà "ráng" tạo nội dung</b>. <br>
+                Noel 2025 sắp đến, Hiếu đang đứng trước nguy cơ: <b>Lương chậm, View thấp, và không có Gấu.</b>
+            </p>
+
+            <div
+                class="bg-white p-6 rounded-2xl shadow-xl max-w-lg mx-auto mb-10 border-4 border-gray-200 relative group hover:border-brand-green transition duration-500">
+                <div class="absolute -top-4 -left-4 text-4xl transform -rotate-45 z-10 filter drop-shadow-md">🔋</div>
+
                 <div class="flex justify-between items-end mb-3">
-                    <span class="font-bold text-gray-700 flex items-center gap-2">
-                        <i class="fas fa-heartbeat text-brand-red animate-pulse text-xl"></i> 
-                        Chỉ số sinh tồn:
+                    <span class="font-bold text-gray-700 flex items-center gap-2 font-mono">
+                        <i class="fas fa-terminal text-brand-dark animate-pulse text-xl"></i>
+                        System Status:
                     </span>
-                    <span class="font-extrabold text-2xl transition-all duration-500 text-brand-red" id="status-percent">15%</span>
+                    <span class="font-extrabold text-2xl transition-all duration-500 text-brand-red font-mono"
+                        id="status-percent">Loading...</span>
                 </div>
 
-                <!-- Thanh năng lượng -->
-                <div class="w-full h-8 bg-gray-200 rounded-full overflow-visible border border-gray-300 relative shadow-inner">
-                    <!-- The Bar -->
-                    <div id="energy-bar" 
-                         class="h-full bg-brand-red rounded-full flex items-center justify-end pr-0 transition-all duration-1000 relative candy-cane-bar" 
-                         style="width: 15%">
-                         
-                         <!-- Icon cuộn trên đầu thanh (position absolute để nó nằm đè lên mép phải) -->
-                         <div class="absolute -right-4 -top-2 bg-white rounded-full w-8 h-8 flex items-center justify-center text-sm shadow-md border-2 border-brand-red z-10 animate-bounce">
-                             <i class="fas fa-sleigh" id="bar-icon"></i> <!-- Icon xe trượt tuyết -->
-                         </div>
+                <div
+                    class="w-full h-8 bg-gray-300 rounded-full overflow-visible border border-gray-400 relative shadow-inner">
+                    <div id="energy-bar"
+                        class="h-full bg-brand-green rounded-full flex items-center justify-end pr-0 transition-all duration-1000 relative loading-stripe"
+                        style="width: 15%">
+                        <div
+                            class="absolute -right-4 -top-2 bg-gray-900 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm shadow-md border-2 border-white z-10 animate-bounce">
+                            <i class="fas fa-robot" id="bar-icon"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Dòng cập nhật tâm trạng -->
                 <div class="mt-4 text-center h-8 overflow-hidden relative border-t border-dashed border-gray-200 pt-3">
-                    <p id="dynamic-status" class="text-sm font-bold text-gray-500 italic transition-all duration-500 transform translate-y-0 flex items-center justify-center gap-2">
-                        <i class="fas fa-spinner fa-spin text-xs"></i> "Đang đo độ đói..."
+                    <p id="dynamic-status"
+                        class="text-sm font-bold text-gray-500 italic font-mono transition-all duration-500 transform translate-y-0 flex items-center justify-center gap-2">
+                        > Compiling code...
                     </p>
                 </div>
-                
-                <!-- Time counter nhỏ xíu -->
+
                 <div class="absolute bottom-1 right-3 text-[10px] text-gray-400 font-mono">
-                    Cập nhật sau: <span id="next-update" class="font-bold text-brand-red">30</span>s
+                    Auto crash in: <span id="next-update" class="font-bold text-brand-red">30</span>s
                 </div>
             </div>
 
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <button onclick="openCustomInput()" class="bg-brand-green text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-green-900/20 hover:-translate-y-1 transition hover:bg-green-700">
-                    <i class="fas fa-snowflake mr-2"></i> Sưởi ấm tim Hiếu
+                <button onclick="openCustomInput()"
+                    class="bg-brand-red text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-red-900/20 hover:-translate-y-1 transition hover:bg-red-700">
+                    <i class="fas fa-donate mr-2"></i> Donate Ly Cà Phê
                 </button>
-                <a href="#ve-du-an" class="bg-white text-gray-700 border-2 border-gray-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-brand-red hover:text-brand-red transition">
-                    Tại sao lại thế?
+                <a href="#ve-du-an"
+                    class="bg-white text-gray-700 border-2 border-gray-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-brand-dark hover:text-brand-dark transition">
+                    Xem Profile (Flop)
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Open Letter -->
     <section id="ve-du-an" class="py-16 bg-white relative scroll-mt-28">
         <div class="container mx-auto px-4">
-            <!-- Khung thư được làm nổi bật hơn với viền đỏ đậm và hiệu ứng nghiêng nhẹ -->
-            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border-4 border-brand-red p-8 md:p-12 relative overflow-hidden transform -rotate-1 hover:rotate-0 transition duration-500">
-                
-                <!-- Decor nền -->
-                <div class="absolute top-0 right-0 w-40 h-40 bg-red-100 rounded-full blur-3xl -mr-16 -mt-16 opacity-50"></div>
-                <div class="absolute bottom-0 left-0 w-32 h-32 bg-yellow-100 rounded-full blur-3xl -ml-10 -mb-10 opacity-50"></div>
-                
-                <!-- Tiêu đề bự -->
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-10 flex items-center justify-center gap-3 text-brand-red uppercase tracking-tighter text-center">
-                    <i class="fas fa-bullhorn animate-bounce"></i> TÂM THƯ KÊU GỌI
+            <div
+                class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl border-4 border-brand-dark p-8 md:p-12 relative overflow-hidden transform -rotate-1 hover:rotate-0 transition duration-500">
+
+                <div
+                    class="absolute top-0 right-0 w-40 h-40 bg-blue-100 rounded-full blur-3xl -mr-16 -mt-16 opacity-50">
+                </div>
+
+                <h2
+                    class="text-4xl md:text-5xl font-extrabold mb-10 flex items-center justify-center gap-3 text-brand-dark uppercase tracking-tighter text-center font-mono">
+                    <i class="fas fa-file-code animate-bounce text-brand-red"></i> README.md
                 </h2>
-                
-                <!-- Nội dung thư - Font chữ viết tay, size lớn -->
+
                 <div class="space-y-6 text-xl md:text-2xl text-gray-700 leading-relaxed font-hand">
                     <p class="font-bold text-3xl text-gray-900 mb-6">
-                        Thưa các mạnh thường quân, các nhà hảo tâm và toàn thể cộng đồng mạng, 📣
+                        Hello World! 👋
                     </p>
 
                     <p>
-                        Bắt đầu từ ngày hôm nay, tôi xin phép long trọng ra mắt dự án <span class="bg-brand-red text-white px-2 py-1 rounded transform rotate-2 inline-block font-bold">"Nuôi Tôi"</span> (phiên bản giới hạn tên là Hiếu).
+                        Mình là Hiếu. Ban ngày mình gõ code thuê cho tư bản, ban đêm mình làm "Nhà ráng tạo nội dung"
+                        trên Tóp Tóp nhưng view toàn lẹt đẹt 2 con số (tính cả view của mình tự xem).
                     </p>
 
                     <p>
-                        Giữa bão giá thị trường, giá xăng tăng, giá vàng nhảy múa, chỉ có lương tâm của Hiếu là vẫn trong sáng (và ví thì trống rỗng). 💸
+                        Mùa Đông năm nay lạnh lắm. CPU máy mình thì nóng (90°C), nhưng lòng mình thì lạnh ngắt. Mình lập
+                        ra dự án <span
+                            class="bg-brand-green text-white px-2 py-1 rounded font-bold font-mono">Nuôi_Hiếu_2025</span>
+                        với mục đích cao cả:
                     </p>
-                    
-                    <!-- Quote nổi bật -->
-                    <div class="bg-yellow-50 border-l-8 border-brand-gold p-6 md:p-8 rounded-r-xl my-8 relative shadow-sm">
-                        <i class="fas fa-quote-left text-4xl text-brand-gold/30 absolute top-4 left-4"></i>
-                        <p class="italic font-bold text-gray-800 relative z-10 pl-4">
-                            "Mỗi tháng, bạn chỉ cần đóng góp 50.000đ thôi (hoặc 500k nếu bạn giàu), tôi cam kết sẽ sử dụng số tiền đó một cách <span class="underline decoration-wavy decoration-red-500 text-brand-red">minh bạch</span>: 
-                            <br><br>
-                            🍕 <span class="text-brand-red">90%</span> để order đồ ăn. <br>
-                            🤔 <span class="text-brand-red">10%</span> còn lại để suy nghĩ xem bữa sau ăn gì."
-                        </p>
+
+                    <div
+                        class="bg-gray-50 border-l-8 border-brand-dark p-6 md:p-8 rounded-r-xl my-8 relative shadow-sm font-sans text-base md:text-lg">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>🎯 <b>KPI 1:</b> Kiếm đủ tiền mua gói mì tôm có trứng (không phải trứng gà công nghiệp).
+                            </li>
+                            <li>🎯 <b>KPI 2:</b> Duy trì server chạy web này (Hosting free sắp hết hạn).</li>
+                            <li>🎯 <b>KPI 3:</b> Tìm một bạn nữ biết dùng `git push` để push tình yêu vào tim mình
+                                (Optional).</li>
+                        </ul>
                     </div>
 
                     <p>
-                        Tôi hứa sẽ update story đầy đủ mỗi khi được ăn ngon để các bạn thấy tiền của mình đã giúp Hiếu béo tốt lên như thế nào. Xin chân thành cảm ơn! 🙏
+                        Cam kết: Mọi khoản donate sẽ được chuyển hóa thành <b>Caffeine</b> và <b>Content</b> chất lượng
+                        (hoặc content rác, hên xui).
                     </p>
-                    
-                    <!-- Chữ ký -->
-                    <div class="pt-8 flex flex-col md:flex-row items-center justify-end gap-4 mt-4 border-t-2 border-dashed border-gray-200">
-                        <span class="text-gray-400 text-base font-sans italic">(Ký tên đóng dấu bằng mồ hôi và nước mắt)</span>
-                        <div class="font-hand text-4xl text-brand-red font-bold -rotate-6 border-4 border-double border-brand-red p-4 rounded-lg inline-block transform hover:scale-110 transition bg-white shadow-lg">
-                            Hiếu (Đã Đói) 🍖
+
+                    <div
+                        class="pt-8 flex flex-col md:flex-row items-center justify-end gap-4 mt-4 border-t-2 border-dashed border-gray-200">
+                        <span class="text-gray-400 text-base font-sans italic">(Đã commit code lúc 3h sáng)</span>
+                        <div
+                            class="font-mono text-2xl text-brand-dark font-bold -rotate-6 border-2 border-gray-800 p-2 rounded bg-white shadow-lg">
+                            git commit -m "Xin tien"
                         </div>
                     </div>
                 </div>
@@ -289,68 +449,82 @@
         </div>
     </section>
 
-    <!-- Pricing / Donation Tiers -->
     <section id="goi-tai-tro" class="py-20 bg-gray-900 text-white relative overflow-hidden">
-        <!-- Tuyết nền tối -->
-        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=');"></div>
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=');">
+        </div>
 
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-brand-gold">🎁 Các Gói Quà Giáng Sinh</h2>
-                <p class="text-gray-400">Chọn hộp quà bạn muốn gửi tặng</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-brand-gold font-mono">Choose Your Plan</h2>
+                <p class="text-gray-400">Chọn gói đăng ký dịch vụ "Nuôi Hiếu Premium"</p>
             </div>
 
             <div class="grid md:grid-cols-4 gap-6 mb-8">
-                <!-- Tier 1 -->
-                <div class="border border-gray-700 bg-gray-800/80 backdrop-blur rounded-2xl p-6 hover:border-brand-green transition relative flex flex-col group">
-                    <div class="absolute -top-3 -right-3 text-2xl group-hover:scale-125 transition">🍬</div>
-                    <h3 class="text-xl font-bold text-gray-300">Gói Kẹo Gậy</h3>
+                <div
+                    class="border border-gray-700 bg-gray-800/80 backdrop-blur rounded-2xl p-6 hover:border-brand-green transition relative flex flex-col group">
+                    <div class="absolute -top-3 -right-3 text-2xl group-hover:scale-125 transition">🍜</div>
+                    <h3 class="text-xl font-bold text-gray-300">Gói "Sinh Viên"</h3>
                     <div class="text-3xl font-bold my-4 text-white">20.000đ</div>
-                    <p class="text-sm text-gray-400 mb-6 flex-grow">Đủ mua một chiếc bánh gừng hoặc ly cà phê giữ tỉnh táo.</p>
-                    <button onclick="startDonation('20k')" class="w-full py-2 rounded-lg border border-gray-500 hover:bg-gray-700 transition">Tặng Kẹo</button>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Đủ một gói mì Hảo Hảo + 1 quả trứng. Cứu đói đêm
+                        chạy deadline.</p>
+                    <button onclick="startDonation('20k')"
+                        class="w-full py-2 rounded-lg border border-gray-500 hover:bg-gray-700 transition font-mono">Deploy</button>
                 </div>
 
-                <!-- Tier 2 (Featured) -->
-                <div class="border-2 border-brand-red bg-gray-800/90 backdrop-blur rounded-2xl p-6 transform md:-translate-y-4 shadow-2xl shadow-red-900/50 relative flex flex-col">
-                    <div class="absolute top-0 right-0 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">Phổ biến nhất</div>
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-4xl">🎅</div>
-                    
-                    <h3 class="text-xl font-bold text-brand-red mt-2">Gói No Âm</h3>
-                    <div class="text-3xl font-bold my-4 text-white">60.000đ</div>
-                    <p class="text-sm text-gray-300 mb-6 flex-grow">Một bát phở nóng hổi hoặc combo gà rán Giáng Sinh.</p>
-                    <ul class="text-sm space-y-2 mb-6 text-gray-300">
-                        <li><i class="fas fa-check text-brand-green mr-2"></i> Hiếu ấm bụng</li>
-                        <li><i class="fas fa-check text-brand-green mr-2"></i> Chúc Giáng sinh trên Story</li>
+                <div
+                    class="border-2 border-brand-red bg-gray-800/90 backdrop-blur rounded-2xl p-6 transform md:-translate-y-4 shadow-2xl shadow-red-900/50 relative flex flex-col rgb-border">
+                    <div
+                        class="absolute top-0 right-0 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        Recommended</div>
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-4xl">☕</div>
+
+                    <h3 class="text-xl font-bold text-brand-red mt-2">Gói "Caffeine"</h3>
+                    <div class="text-3xl font-bold my-4 text-white">50.000đ</div>
+                    <p class="text-sm text-gray-300 mb-6 flex-grow">Một ly Highlands/Phúc Long full topping. Tăng 200%
+                        tốc độ fix bug.</p>
+                    <ul class="text-sm space-y-2 mb-6 text-gray-300 font-mono text-xs">
+                        <li>> Fix bug: Yes</li>
+                        <li>> Tinh tao: Yes</li>
+                        <li>> Run tay: Maybe</li>
                     </ul>
-                    <button onclick="startDonation('60k')" class="w-full py-2 rounded-lg bg-brand-red hover:bg-red-700 transition font-bold text-white shadow-lg">Tặng Ngay</button>
+                    <button onclick="startDonation('50k')"
+                        class="w-full py-2 rounded-lg bg-brand-red hover:bg-red-700 transition font-bold text-white shadow-lg font-mono">Run
+                        Build</button>
                 </div>
 
-                <!-- Tier 3 -->
-                <div class="border border-gray-700 bg-gray-800/80 backdrop-blur rounded-2xl p-6 hover:border-brand-gold transition flex flex-col group">
-                    <div class="absolute -top-3 -right-3 text-2xl group-hover:scale-125 transition">⛄</div>
-                    <h3 class="text-xl font-bold text-brand-gold">Gói Người Tuyết</h3>
+                <div
+                    class="border border-gray-700 bg-gray-800/80 backdrop-blur rounded-2xl p-6 hover:border-brand-gold transition flex flex-col group">
+                    <div class="absolute -top-3 -right-3 text-2xl group-hover:scale-125 transition">💆‍♂️</div>
+                    <h3 class="text-xl font-bold text-brand-gold">Gói "Chữa Cột Sống"</h3>
                     <div class="text-3xl font-bold my-4 text-white">200.000đ</div>
-                    <p class="text-sm text-gray-400 mb-6 flex-grow">Một bữa lẩu cô đơn nhưng sang chảnh.</p>
-                    <button onclick="startDonation('200k')" class="w-full py-2 rounded-lg border border-gray-500 hover:bg-gray-700 transition">Tặng Lẩu</button>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Đi massage trị liệu cổ vai gáy. Code nhiều đau lưng
+                        quá các bạn ơi.</p>
+                    <button onclick="startDonation('200k')"
+                        class="w-full py-2 rounded-lg border border-gray-500 hover:bg-gray-700 transition font-mono">Hotfix</button>
                 </div>
 
-                <!-- Tier 4 -->
-                <div class="border border-brand-green bg-gray-800/80 backdrop-blur rounded-2xl p-6 hover:bg-green-900/20 transition flex flex-col">
-                    <h3 class="text-xl font-bold text-brand-green">Gói Tuần Lộc</h3>
+                <div
+                    class="border border-brand-green bg-gray-800/80 backdrop-blur rounded-2xl p-6 hover:bg-green-900/20 transition flex flex-col">
+                    <h3 class="text-xl font-bold text-brand-green">Gói "Nhà Đầu Tư"</h3>
                     <div class="text-3xl font-bold my-4 text-white">500k++</div>
-                    <p class="text-sm text-gray-400 mb-6 flex-grow">Bạn chính là Santa Claus đời thực của tôi!</p>
-                    <button onclick="startDonation('500k')" class="w-full py-2 rounded-lg bg-brand-green text-white font-bold hover:bg-green-700 transition">Trở thành Santa</button>
+                    <p class="text-sm text-gray-400 mb-6 flex-grow">Bạn chính là Shark Tank của đời tôi. Tôi sẽ gắn logo
+                        của bạn lên trán khi livestream.</p>
+                    <button onclick="startDonation('500k')"
+                        class="w-full py-2 rounded-lg bg-brand-green text-white font-bold hover:bg-green-700 transition font-mono">Invest</button>
                 </div>
             </div>
 
-            <!-- Custom Amount -->
             <div class="max-w-xl mx-auto bg-gray-800 rounded-2xl p-1 border border-gray-700 shadow-lg">
                 <div class="bg-gray-900 rounded-xl p-6 text-center">
-                    <h3 class="text-xl font-bold text-gray-300 mb-2">🎁 Hộp Quà Bí Mật (Tùy tâm)</h3>
+                    <h3 class="text-xl font-bold text-gray-300 mb-2">⌨️ Donate Tùy Tâm (Input Amount)</h3>
                     <div class="flex gap-2 mt-4">
-                        <input type="text" onclick="openCustomInput()" readonly placeholder="Nhập số tiền..." class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none cursor-pointer hover:bg-gray-700 transition">
-                        <button onclick="openCustomInput()" class="bg-brand-gold text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 transition whitespace-nowrap">
-                            Gửi
+                        <input type="text" onclick="openCustomInput()" readonly
+                            placeholder="Nhập số tiền (Integer only)..."
+                            class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none cursor-pointer hover:bg-gray-700 transition font-mono">
+                        <button onclick="openCustomInput()"
+                            class="bg-brand-gold text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 transition whitespace-nowrap font-mono">
+                            Submit
                         </button>
                     </div>
                 </div>
@@ -358,128 +532,129 @@
         </div>
     </section>
 
-    <!-- Transparency Report -->
     <section id="minh-bach" class="py-20 bg-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-brand-red">Báo cáo tài chính minh bạch</h2>
-            
-            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
-                <!-- Chart Container -->
-                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 w-full max-w-2xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
-                    <!-- Background decor dots -->
-                    <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: radial-gradient(#ccc 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-brand-dark">Báo Cáo Tài Chính (Audit Log)</h2>
 
-                    <!-- Biểu đồ -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 w-full max-w-2xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full opacity-10"
+                        style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;">
+                    </div>
+
                     <div class="relative w-48 h-48 flex-shrink-0 z-10">
-                        <!-- Vòng tròn biểu đồ: Hồng (70%), Cam (20%), Tím (10%) -->
-                        <div class="w-full h-full rounded-full shadow-lg" 
-                             style="background: conic-gradient(#F43F5E 0% 70%, #F97316 70% 90%, #A855F7 90% 100%);">
+                        <div class="w-full h-full rounded-full shadow-lg"
+                            style="background: conic-gradient(#E63946 0% 60%, #2A9D8F 60% 80%, #1D3557 80% 100%);">
                         </div>
-                        <!-- Lỗ tròn ở giữa tạo hiệu ứng Doughnut -->
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white rounded-full flex items-center justify-center text-center shadow-inner z-20">
-                            <span class="text-gray-500 font-bold text-sm leading-tight">Tổng chi<br>tháng này</span>
+                        <div
+                            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white rounded-full flex items-center justify-center text-center shadow-inner z-20">
+                            <span
+                                class="text-gray-500 font-bold text-sm leading-tight font-mono">Total<br>Expense</span>
                         </div>
                     </div>
 
-                    <!-- Chú thích (Legend) -->
                     <div class="flex-grow text-left w-full z-10">
-                        <div class="space-y-4">
-                            <!-- Item 1 -->
+                        <div class="space-y-4 font-mono text-sm">
                             <div class="flex items-center justify-between border-b border-gray-50 pb-2">
                                 <div class="flex items-center gap-3">
-                                    <span class="w-4 h-4 rounded-full bg-[#F43F5E] shadow-sm"></span> <!-- Màu hồng đậm -->
-                                    <span class="font-bold text-gray-700">Ăn uống & Trà sữa</span>
+                                    <span class="w-4 h-4 rounded-full bg-[#E63946] shadow-sm"></span>
+                                    <span class="font-bold text-gray-700">Gear (Bàn phím, Chuột)</span>
                                 </div>
-                                <span class="font-bold text-gray-900">70%</span>
+                                <span class="font-bold text-gray-900">60%</span>
                             </div>
-                            
-                            <!-- Item 2 -->
+
                             <div class="flex items-center justify-between border-b border-gray-50 pb-2">
                                 <div class="flex items-center gap-3">
-                                    <span class="w-4 h-4 rounded-full bg-[#F97316] shadow-sm"></span> <!-- Màu cam -->
-                                    <span class="font-bold text-gray-700">Trả nợ bạn bè</span>
+                                    <span class="w-4 h-4 rounded-full bg-[#2A9D8F] shadow-sm"></span>
+                                    <span class="font-bold text-gray-700">Coffee & Redbull</span>
                                 </div>
                                 <span class="font-bold text-gray-900">20%</span>
                             </div>
 
-                            <!-- Item 3 -->
                             <div class="flex items-center justify-between border-b border-gray-50 pb-2">
                                 <div class="flex items-center gap-3">
-                                    <span class="w-4 h-4 rounded-full bg-[#A855F7] shadow-sm"></span> <!-- Màu tím -->
-                                    <span class="font-bold text-gray-700">Đầu tư tương lai (Vietlott)</span>
+                                    <span class="w-4 h-4 rounded-full bg-[#1D3557] shadow-sm"></span>
+                                    <span class="font-bold text-gray-700">Tiền Điện (Nuôi Server)</span>
                                 </div>
-                                <span class="font-bold text-gray-900">10%</span>
+                                <span class="font-bold text-gray-900">20%</span>
                             </div>
                         </div>
-                        
-                        <!-- Ghi chú footer -->
-                        <div class="mt-6 pt-2 text-gray-400 text-sm italic text-center md:text-left">
-                            *Số liệu được kiểm toán bởi... chính tôi.
+
+                        <div class="mt-6 pt-2 text-gray-400 text-xs italic text-center md:text-left">
+                            *Note: 0% dành cho tiết kiệm và người yêu.
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION: Lời Chứng (Testimonials) -->
     <section id="loi-chung" class="py-20 bg-gray-50 relative overflow-hidden">
         <div class="container mx-auto px-4">
-             <div class="text-center mb-16">
-                <span class="text-brand-green font-bold tracking-wider uppercase text-sm">Review Cực Chân Thực</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-800">Cộng Đồng Nói Gì Về Hiếu?</h2>
+            <div class="text-center mb-16">
+                <span class="text-brand-green font-bold tracking-wider uppercase text-sm font-mono">git blame</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-800">Nạn Nhân Nói Gì Về Hiếu?</h2>
                 <div class="w-20 h-1 bg-brand-red mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Review 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-green relative hover:-translate-y-2 transition duration-300">
-                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-green rounded-full flex items-center justify-center text-white text-2xl border-4 border-white shadow-sm">
-                        <i class="fas fa-bug"></i>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-dark relative hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="absolute -top-6 left-8 w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center text-white text-2xl border-4 border-white shadow-sm">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-6 pt-4">"Hiếu là một lập trình viên rất kiên trì. Anh ấy có thể ngồi cả ngày chỉ để fix một cái bug do chính anh ấy tạo ra hôm qua. Rất đáng được nuôi dưỡng để bảo tồn."</p>
+                    <p class="text-gray-600 italic mb-6 pt-4">"Hiếu code rất nhiệt tình, mỗi tội cứ deploy là sập
+                        server. Mong mọi người donate để em nó đi học khóa 'Code an toàn'."</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
-                             <img src="https://api.iconify.design/noto:lady-beetle.svg" alt="Bug" class="w-full h-full object-cover">
+                            <img src="https://api.iconify.design/noto:man-office-worker.svg" alt="PM"
+                                class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Con Bug Cứng Đầu</h4>
-                            <p class="text-xs text-gray-400">Bạn tri kỷ</p>
+                            <h4 class="font-bold text-gray-900 text-sm">Anh PM Khó Tính</h4>
+                            <p class="text-xs text-gray-400">Người giao Deadline</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-red relative hover:-translate-y-2 transition duration-300">
-                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-red rounded-full flex items-center justify-center text-white text-2xl border-4 border-white shadow-sm">
-                        <i class="fas fa-cat"></i>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-green relative hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="absolute -top-6 left-8 w-12 h-12 bg-brand-green rounded-full flex items-center justify-center text-white text-2xl border-4 border-white shadow-sm">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-6 pt-4">"Meo meo meo meo. (Dịch: Thằng Sen này nghèo lắm, pate của tôi nó còn chấm mút. Các bạn donate cho nó đi để tôi còn được ăn ngon.)"</p>
+                    <p class="text-gray-600 italic mb-6 pt-4">"90% code của Hiếu là do tôi viết. Cậu ta chỉ việc copy
+                        paste và nhận lương. Nhưng thôi, cậu ta nghèo thật."</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
-                             <img src="https://api.iconify.design/noto:cat-face.svg" alt="Cat" class="w-full h-full object-cover">
+                            <img src="https://api.iconify.design/noto:robot.svg" alt="AI"
+                                class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Hoàng Thượng Mèo</h4>
-                            <p class="text-xs text-gray-400">Chủ nhà thực sự</p>
+                            <h4 class="font-bold text-gray-900 text-sm">ChatGPT</h4>
+                            <p class="text-xs text-gray-400">Mentor trọn đời</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Review 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-gold relative hover:-translate-y-2 transition duration-300">
-                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center text-white text-2xl border-4 border-white shadow-sm">
-                        <i class="fas fa-laptop-code"></i>
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-brand-red relative hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="absolute -top-6 left-8 w-12 h-12 bg-brand-red rounded-full flex items-center justify-center text-white text-2xl border-4 border-white shadow-sm">
+                        <i class="fas fa-heart-broken"></i>
                     </div>
-                    <p class="text-gray-600 italic mb-6 pt-4">"Tôi chạy Chrome 50 tabs mà Hiếu không cho thêm RAM. Tôi nóng 90 độ mà Hiếu không bật điều hòa. Giải cứu tôi với!"</p>
+                    <p class="text-gray-600 italic mb-6 pt-4">"Anh ấy yêu cái bàn phím cơ hơn yêu tôi. Lúc hôn nhau anh
+                        ấy còn lẩm bẩm về Docker container. Chia tay!"</p>
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
-                             <img src="https://api.iconify.design/noto:laptop.svg" alt="Laptop" class="w-full h-full object-cover">
+                            <img src="https://api.iconify.design/noto:broken-heart.svg" alt="Ex"
+                                class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Chiếc Laptop Cũ</h4>
-                            <p class="text-xs text-gray-400">Công cụ kiếm cơm</p>
+                            <h4 class="font-bold text-gray-900 text-sm">Người Yêu Cũ</h4>
+                            <p class="text-xs text-gray-400">Đã Block</p>
                         </div>
                     </div>
                 </div>
@@ -487,196 +662,197 @@
         </div>
     </section>
 
-    <!-- Bảng Vàng Ghi Danh -->
     <section id="bang-vang" class="py-20 bg-brand-cream relative overflow-hidden">
-        <!-- Decor nền -->
-        <div class="absolute -left-10 top-20 text-9xl opacity-5 rotate-45">🔔</div>
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-brand-red font-hand flex justify-center items-center gap-3">
-                <i class="fas fa-trophy text-brand-gold"></i> Bảng Vàng Ghi Danh
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Item 1: NYC -->
-                <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
-                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">💔</div>
-                    <h3 class="font-bold text-lg text-gray-800">Người Yêu Cũ</h3>
-                    <div class="text-brand-green font-bold text-xl my-2">+5.000đ</div>
-                    <p class="text-gray-500 italic text-sm bg-gray-50 p-3 rounded-lg">
-                        "Chia tay rồi nhưng thấy tội nên cho 5k."
-                    </p>
-                </div>
+        <div class="absolute -left-10 top-20 text-9xl opacity-5 rotate-45">💸</div>
 
-                <!-- Item 2: Mom -->
-                <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
-                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">👩</div>
-                    <h3 class="font-bold text-lg text-gray-800">Mẹ (đã chặn)</h3>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2
+                class="text-3xl md:text-4xl font-bold mb-12 text-center text-brand-dark font-hand flex justify-center items-center gap-3">
+                <i class="fas fa-medal text-brand-gold"></i> Top Contributors
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">👵</div>
+                    <h3 class="font-bold text-lg text-gray-800">Mẹ ở quê</h3>
                     <div class="text-brand-green font-bold text-xl my-2">+500.000đ</div>
                     <p class="text-gray-500 italic text-sm bg-gray-50 p-3 rounded-lg">
-                        "Gửi tiền về quê đi con, ở đó mà xin."
+                        "Cầm lấy mà ăn, đừng có ăn mì tôm mãi hại người."
                     </p>
                 </div>
 
-                <!-- Item 3: Best Friend -->
-                <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
-                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">🐶</div>
-                    <h3 class="font-bold text-lg text-gray-800">Bạn thân</h3>
-                    <div class="text-brand-red font-bold text-xl my-2">-50.000đ</div>
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">👔</div>
+                    <h3 class="font-bold text-lg text-gray-800">Khách Hàng</h3>
+                    <div class="text-brand-red font-bold text-xl my-2">-2.000.000đ</div>
                     <p class="text-gray-500 italic text-sm bg-gray-50 p-3 rounded-lg">
-                        "Trả tao 50k hôm qua vay coi."
+                        "Web lỗi rồi em ơi, fix xong anh mới trả tiền nhé."
                     </p>
                 </div>
 
-                <!-- Item 4: Landlord -->
-                <div class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
-                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">🏠</div>
-                    <h3 class="font-bold text-lg text-gray-800">Chủ trọ</h3>
-                    <div class="text-gray-400 font-bold text-xl my-2">0đ</div>
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">🍕</div>
+                    <h3 class="font-bold text-lg text-gray-800">Thằng bạn thân</h3>
+                    <div class="text-brand-green font-bold text-xl my-2">+10.000đ</div>
                     <p class="text-gray-500 italic text-sm bg-gray-50 p-3 rounded-lg">
-                        "Tháng này đóng tiền chưa em?"
+                        "Tao bao mày ly trà đá, hết tiền rồi."
                     </p>
                 </div>
-            </div>
 
-            <div class="text-center mt-12">
-                <button class="bg-white border-2 border-brand-red text-brand-red px-8 py-3 rounded-full font-bold hover:bg-brand-red hover:text-white transition shadow-lg flex items-center gap-2 mx-auto">
-                    Xem tất cả nhà tài trợ (1) <i class="fas fa-chevron-right text-xs"></i>
-                </button>
+                <div
+                    class="bg-white p-6 rounded-2xl shadow-md border-b-4 border-gray-300 hover:border-brand-red transition transform hover:-translate-y-2 group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition inline-block">👻</div>
+                    <h3 class="font-bold text-lg text-gray-800">Người Yêu (Tương lai)</h3>
+                    <div class="text-gray-400 font-bold text-xl my-2">NULL</div>
+                    <p class="text-gray-500 italic text-sm bg-gray-50 p-3 rounded-lg">
+                        Error: Object reference not set to an instance.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10 text-center border-t-4 border-brand-red">
+    <footer class="bg-brand-dark text-white py-10 text-center border-t-4 border-brand-red">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold mb-4 font-hand text-brand-red flex justify-center items-center gap-2">
-                <i class="fas fa-candy-cane"></i> Nuôi Hiếu Project
+            <h2 class="text-2xl font-bold mb-4 font-mono text-brand-red flex justify-center items-center gap-2">
+                &lt;NuoiHieu /&gt;
             </h2>
-            <p class="text-gray-400 mb-4">Website này được tạo ra để vui là chính (nhưng donate là thật).</p>
-            
-            <!-- Miễn trừ trách nhiệm -->
+            <p class="text-gray-400 mb-4 font-mono">Build with ❤️ and ☕ by Hieu.</p>
+
             <div class="max-w-3xl mx-auto mb-6 px-4">
-                <p class="text-gray-600 text-xs italic leading-relaxed border border-gray-800 rounded-lg p-3 bg-gray-800/30">
-                    <span class="font-bold text-gray-500">⚠️ Miễn trừ trách nhiệm:</span> Nội dung trên website chỉ mang tính chất giải trí, hài hước nhằm mục đích tạo tiếng cười mùa Giáng Sinh. Chúng tôi hoàn toàn không có ý định công kích, bôi nhọ, xúc phạm hay ám chỉ bất kỳ cá nhân, tổ chức nào. Mọi sự trùng hợp (nếu có) chỉ là ngẫu nhiên. Vui lòng đón nhận với tinh thần vui vẻ!
+                <p
+                    class="text-gray-500 text-xs italic leading-relaxed border border-gray-700 rounded-lg p-3 bg-gray-800/50 font-mono">
+                    Disclaimer: Website này được viết trong lúc server đang sập và Hiếu đang đói. Mọi sự ủng hộ của bạn
+                    là động lực để Hiếu fix bug tiếp.
                 </p>
             </div>
 
-            <div class="border-t border-gray-800 pt-6 text-sm text-gray-500">
-                &copy; 2024 Nuôi Hiếu. Merry Christmas! 🎄
+            <div class="border-t border-gray-700 pt-6 text-sm text-gray-500 font-mono">
+                &copy; 2025 HieuDev. All bugs reserved. 🎄
             </div>
         </div>
     </footer>
 
-    <!-- Smart Modal -->
     <div id="donateModal" class="fixed inset-0 z-[100] hidden">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl w-11/12 max-w-md overflow-hidden animate-[fadeIn_0.3s_ease-out]">
-            
-            <div class="bg-brand-red p-4 text-white text-center relative overflow-hidden">
-                 <!-- Decor bg -->
-                 <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/snow.png')]"></div>
-                <h3 class="text-xl font-bold relative z-10">Cổng Nhận Quà Noel</h3>
-                <button onclick="closeModal()" class="absolute top-4 right-4 hover:text-gray-200 text-xl z-10"><i class="fas fa-times"></i></button>
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 rounded-xl shadow-2xl w-11/12 max-w-md overflow-hidden animate-[fadeIn_0.3s_ease-out] border border-gray-700">
+
+            <div class="bg-brand-dark p-4 text-white text-center border-b border-gray-700">
+                <h3 class="text-xl font-bold font-mono text-brand-green">sudo donate --force</h3>
+                <button onclick="closeModal()"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl z-10"><i
+                        class="fas fa-times"></i></button>
             </div>
 
-            <!-- STEP 1: Input -->
             <div id="modal-step-input" class="p-8 hidden">
                 <div class="text-center mb-6">
-                    <div class="text-5xl mb-4">🎅</div>
-                    <h4 class="text-xl font-bold text-gray-800">Bạn muốn lì xì bao nhiêu?</h4>
-                    <p class="text-gray-500 text-sm mt-2">1 tỷ hả </p>
+                    <div class="text-5xl mb-4">💸</div>
+                    <h4 class="text-xl font-bold text-gray-200">Nhập số tiền bạn muốn Donate</h4>
+                    <p class="text-gray-500 text-sm mt-2 font-mono">while(money > 0) { happy++ }</p>
                 </div>
-                <input type="number" id="customAmountInput" placeholder="Ví dụ: 50,000" class="w-full text-2xl font-bold text-center border-b-2 border-brand-red focus:outline-none py-2 mb-6 text-brand-red" onkeypress="if(event.key==='Enter') submitCustomAmount()">
-                <button onclick="submitCustomAmount()" class="w-full bg-brand-red text-white py-3 rounded-xl font-bold text-lg hover:bg-red-800 transition shadow-lg">
-                    Tiếp Tục <i class="fas fa-arrow-right ml-2"></i>
+                <input type="number" id="customAmountInput" placeholder="VD: 50000"
+                    class="w-full text-2xl font-bold text-center bg-gray-800 border-b-2 border-brand-green text-white focus:outline-none py-2 mb-6 font-mono"
+                    onkeypress="if(event.key==='Enter') submitCustomAmount()">
+                <button onclick="submitCustomAmount()"
+                    class="w-full bg-brand-green text-white py-3 rounded-lg font-bold text-lg hover:bg-green-600 transition shadow-lg font-mono">
+                    Execute <i class="fas fa-terminal ml-2"></i>
                 </button>
             </div>
 
-            <!-- STEP 2: Quote -->
-            <div id="modal-step-quote" class="p-8 hidden flex flex-col items-center justify-center min-h-[300px] bg-red-50">
-                <div class="text-6xl mb-6 animate-bounce">🦌</div>
-                <div id="quote-text" class="text-xl font-bold text-center text-gray-800 leading-relaxed italic animate-pop">
-                    "Loading lời cảm ơn..."
+            <div id="modal-step-quote"
+                class="p-8 hidden flex flex-col items-center justify-center min-h-[300px] bg-gray-800">
+                <div class="text-6xl mb-6 animate-spin-slow text-brand-green"><i class="fas fa-circle-notch"></i></div>
+                <div id="quote-text"
+                    class="text-xl font-bold text-center text-gray-200 leading-relaxed font-mono animate-pop">
+                    "Connecting to Server..."
                 </div>
-                <p class="text-xs text-gray-400 mt-8 animate-pulse">Đang mở túi quà...</p>
+                <p class="text-xs text-gray-500 mt-8 font-mono blink">_cursor is blinking_</p>
             </div>
 
-            <!-- STEP 3: QR -->
             <div id="modal-step-qr" class="hidden">
                 <div class="p-6 text-center">
-                    <!-- Khung ảnh QR -->
                     <div class="relative w-full max-w-sm mx-auto mb-4 group">
-                        <!-- Decor nền hồng phía sau -->
-                        <div class="absolute inset-0 bg-pink-400 rounded-xl transform rotate-2 opacity-20 group-hover:rotate-3 transition"></div>
-                        
-                        <!-- Ảnh chính -->
-                        <img src="qrmomo.jpg" 
-                             onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=ChucMungGiangSinh'; this.parentElement.insertAdjacentHTML('beforeend', '<p class=\'text-red-500 text-xs mt-1\'>Lưu ý: Hãy đảm bảo file ảnh tên là <b>qrmomo.jpg</b> nằm cùng thư mục nhé!</p>')" 
-                             alt="QR Code Momo" 
-                             class="relative w-full rounded-xl shadow-2xl border-4 border-white object-cover transform transition group-hover:scale-[1.02]">
-                        
-                        <!-- Nơ trang trí -->
-                        <div class="absolute -top-5 -right-5 text-4xl animate-bounce z-20">🎀</div>
+                        <div
+                            class="absolute inset-0 bg-brand-green rounded-lg opacity-20 group-hover:opacity-40 transition">
+                        </div>
+                        <!-- on error khi không lấy được ảnh hiện thông báo "oops đói quá quên thêm qr ròi @@" -->
+                        <img src="assets/qrmomo.jpg" alt="QR Code"
+                            onerror=" this.style.display='none'; alert('Oops! Đói quá quên thêm QR ròi 🥲🥲');"
+                            class="relative w-full rounded-lg shadow-2xl border-2 border-brand-green object-cover p-1 bg-white">
                     </div>
-                    
-                    <!-- Caption theo ảnh -->
-                    <p class="text-brand-red font-bold text-lg mb-1 font-hand">"Để đàn em ở đây và không nói gì!!"</p>
-                    <p class="text-gray-400 text-xs italic mb-4">(Mèo méo meo mèo meo...)</p>
 
-                    <!-- Phần STK cập nhật -->
-                    <div class="bg-pink-50 rounded-xl p-4 mb-4 border border-pink-100">
-                        <label class="block text-xs font-bold text-pink-500 uppercase tracking-wide mb-1">MOMO / Ngân Hàng</label>
-                        <div class="flex items-center gap-2 bg-white rounded-lg p-2 border border-pink-200">
-                            <span class="text-2xl">🏦</span>
-                            <input type="text" value="xxxx.xxxx.473" readonly class="w-full bg-transparent border-none font-mono text-center text-lg font-bold text-gray-800 focus:outline-none" id="stkInput">
-                            <button onclick="copyToClipboard()" class="bg-pink-500 text-white w-8 h-8 rounded-full hover:bg-pink-600 transition flex items-center justify-center shadow-sm" title="Copy">
+                    <p class="text-brand-green font-bold text-lg mb-1 font-mono">"Scan success! Waiting for
+                        transaction..."</p>
+                    <p class="text-gray-400 text-xs italic mb-4 font-mono">(Cảm ơn bạn đã nuôi Hiếu)</p>
+
+                    <div class="bg-gray-800 rounded-lg p-4 mb-4 border border-gray-700">
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1 font-mono">MOMO
+                            / BANK ACCOUNT</label>
+                        <div class="flex items-center gap-2 bg-gray-900 rounded-lg p-2 border border-gray-600">
+                            <span class="text-2xl">💳</span>
+                            <input type="text" value="0355141483" readonly
+                                class="w-full bg-transparent border-none font-mono text-center text-lg font-bold text-brand-gold focus:outline-none"
+                                id="stkInput">
+                            <button onclick="copyToClipboard()"
+                                class="bg-brand-dark text-white w-8 h-8 rounded hover:bg-gray-600 transition flex items-center justify-center shadow-sm"
+                                title="Copy">
                                 <i class="far fa-copy text-sm"></i>
                             </button>
                         </div>
                     </div>
-                    <p id="copyMsg" class="text-green-600 text-xs font-bold hidden mb-2 animate-bounce"><i class="fas fa-check"></i> Đã copy STK! Ting ting ngay đi!</p>
+                    <p id="copyMsg" class="text-green-500 text-xs font-bold hidden mb-2 font-mono"><i
+                            class="fas fa-check"></i> Sao chép rồi á dán zô MoMo nha! Tui đợi bạn 🫰</p>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- Scripts Logic -->
     <script>
-        // --- 1. HIỆU ỨNG TUYẾT RƠI ---
-        function createSnowflake() {
+        // --- 1. HIỆU ỨNG CODE RƠI (MATRIX STYLE SNOW) ---
+        function createCodeFlake() {
             const container = document.getElementById('snow-container');
-            if (!container) return; // Bảo vệ khỏi lỗi null
+            if (!container) return;
 
             const snow = document.createElement('div');
             snow.classList.add('snowflake');
-            snow.textContent = ['❄', '❅', '❆', '•'][Math.floor(Math.random() * 4)];
-            snow.style.color = Math.random() > 0.5 ? '#AED6F1' : '#fff'; // Xanh nhạt hoặc trắng
-            
+            // Random các ký tự code
+            const chars = ['{', '}', '</>', ';', 'ERROR', '404', 'BUG', '0', '1'];
+            snow.textContent = chars[Math.floor(Math.random() * chars.length)];
+
+            // Màu sắc matrix hoặc đỏ giáng sinh
+            snow.style.color = Math.random() > 0.7 ? '#E63946' : '#2A9D8F';
+
             snow.style.left = Math.random() * 100 + 'vw';
-            snow.style.fontSize = Math.random() * 15 + 10 + 'px';
-            snow.style.opacity = Math.random() * 0.7 + 0.3;
-            
-            const duration = Math.random() * 5 + 5; // 5-10s
+            snow.style.fontSize = Math.random() * 20 + 10 + 'px';
+            snow.style.opacity = Math.random() * 0.5 + 0.2;
+
+            const duration = Math.random() * 5 + 3;
             snow.style.animationDuration = duration + 's';
-            
+
             container.appendChild(snow);
 
-            // Xóa sau khi rơi xong
-            setTimeout(() => {
-                snow.remove();
-            }, duration * 1000);
+            setTimeout(() => {snow.remove();}, duration * 1000);
         }
-        setInterval(createSnowflake, 200); // Tạo tuyết mỗi 200ms
+        setInterval(createCodeFlake, 150);
 
         // --- 2. LOGIC DONATE ---
-        const xmasQuotes = [
-            "Ho Ho Ho! Cảm ơn Santa Claus! 🎅",
-            "Món quà này ấm hơn cả lò sưởi! 🔥",
-            "Chúc bạn Giáng Sinh an lành và ví tiền rủng rỉnh! 🎄",
-            "Hiếu đã nhận được tín hiệu từ Bắc Cực! ❄️",
-            "Yêu thương bay tung tóe như pháo hoa đêm Noel! ✨"
+        const devQuotes = [
+            "Đã nhận tín hiệu! Server đang xử lý... 📶",
+            "Tuyệt vời! Đã đủ tiền mua mì tôm! 🍜",
+            "Cảm ơn bạn! Bug này đã được fix! 🐛✅",
+            "Deploying happiness to production... 🚀",
+            "You are the CSS to my HTML! 🎨",
+            "Keep calm and code on! 💻",
+            "Debugging life, one line at a time. 🐞",
+            "Sống rồi! Cảm ơn bạn đã donate! 🎉",
+            "Code sạch sẽ, đời vui vẻ! 🧼😊",
+            "Bạn vừa nâng cấp năng lượng coder! ⚡"
+
         ];
 
         let currentTimeout;
@@ -710,16 +886,16 @@
         function submitCustomAmount() {
             const input = document.getElementById('customAmountInput');
             if (input.value) showRandomQuote();
-            else alert("Nhập số tiền đi Santa ơi!");
+            else alert("NullPointerException: Money cannot be null!");
         }
 
         function showRandomQuote() {
             showStep('modal-step-quote');
-            const quote = xmasQuotes[Math.floor(Math.random() * xmasQuotes.length)];
+            const quote = devQuotes[Math.floor(Math.random() * devQuotes.length)];
             document.getElementById('quote-text').innerText = `"${quote}"`;
             currentTimeout = setTimeout(() => {
                 showStep('modal-step-qr');
-            }, 2500);
+            }, 2000);
         }
 
         function closeModal() {
@@ -730,81 +906,64 @@
         function copyToClipboard() {
             const copyText = document.getElementById("stkInput");
             copyText.select();
-            copyText.setSelectionRange(0, 99999); 
+            copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value).then(() => {
                 document.getElementById('copyMsg').classList.remove('hidden');
             });
         }
 
-        // --- 3. LOGIC THANH TRẠNG THÁI NÂNG CAO (MỚI) ---
-        // Các trạng thái kèm màu sắc và icon giáng sinh
+        // --- 3. LOGIC TRẠNG THÁI CODER ---
         const lifeStatuses = [
-            { pct: 5, text: "Lạnh cóng... Cần sưởi ấm gấp! 🥶", bgClass: "bg-gray-600", icon: "fa-snowflake", textColor: "text-gray-600" },
-            { pct: 15, text: "Bụng kêu Jingle Bells 🔔", bgClass: "bg-red-600", icon: "fa-bell", textColor: "text-red-600" },
-            { pct: 30, text: "Đang gặm tất chờ quà 🧦", bgClass: "bg-orange-500", icon: "fa-socks", textColor: "text-orange-600" },
-            { pct: 50, text: "Tạm ổn, thèm gà tây 🍗", bgClass: "bg-yellow-500", icon: "fa-drumstick-bite", textColor: "text-yellow-600" },
-            { pct: 75, text: "Đang gói quà cho chính mình 🎁", bgClass: "bg-green-500", icon: "fa-gifts", textColor: "text-green-600" },
-            { pct: 90, text: "No như ông già Noel! 🎅", bgClass: "bg-green-600", icon: "fa-candy-cane", textColor: "text-green-700" },
-            { pct: 100, text: "FULL NĂNG LƯỢNG QUẨY NOEL! 🎄", bgClass: "bg-purple-600", icon: "fa-star", textColor: "text-purple-600" }
+            {pct: 5, text: "Critical Error: Đói mờ mắt 😵", bgClass: "bg-red-600", icon: "fa-skull-crossbones", textColor: "text-red-600"},
+            {pct: 15, text: "Low Battery: Cần nạp Cafein ☕", bgClass: "bg-orange-600", icon: "fa-battery-quarter", textColor: "text-orange-600"},
+            {pct: 30, text: "Debugging... (Found 99 errors) 🐛", bgClass: "bg-yellow-500", icon: "fa-bug", textColor: "text-yellow-600"},
+            {pct: 50, text: "Coding trong nước mắt 😭", bgClass: "bg-blue-500", icon: "fa-keyboard", textColor: "text-blue-600"},
+            {pct: 70, text: "Đang ảo tưởng mình là Senior 😎", bgClass: "bg-teal-500", icon: "fa-glasses", textColor: "text-teal-600"},
+            {pct: 90, text: "Server đang chạy ổn (trộm vía) 🚀", bgClass: "bg-green-600", icon: "fa-server", textColor: "text-green-700"},
+            {pct: 100, text: "ĐÃ NHẬN LƯƠNG (Sắp hết) 💸", bgClass: "bg-purple-600", icon: "fa-money-bill-wave", textColor: "text-purple-600"}
         ];
 
         let countdownVal = 30;
 
         function updateEnergyStatus() {
-            // Random trạng thái
             let rand = Math.random();
             let selected;
-            // Tỉ lệ ra trạng thái "đói" cao hơn cho vui
-            if (rand < 0.4) selected = lifeStatuses[Math.floor(Math.random() * 3)]; // 0,1,2 (Đói)
-            else if (rand < 0.8) selected = lifeStatuses[Math.floor(Math.random() * 2) + 3]; // 3,4 (Bình thường)
-            else selected = lifeStatuses[Math.floor(Math.random() * 2) + 5]; // 5,6 (No)
+            // Tỷ lệ cao rơi vào trạng thái khổ (đói/bug)
+            if (rand < 0.5) selected = lifeStatuses[Math.floor(Math.random() * 4)];
+            else selected = lifeStatuses[Math.floor(Math.random() * 3) + 4];
 
             const bar = document.getElementById('energy-bar');
             const statusText = document.getElementById('dynamic-status');
             const percentText = document.getElementById('status-percent');
             const iconElem = document.getElementById('bar-icon');
 
-            // 1. Cập nhật độ dài thanh bar
             bar.style.width = selected.pct + '%';
-            
-            // 2. Cập nhật màu nền thanh (xóa màu cũ, thêm màu mới + giữ class candy-cane)
-            // Lưu ý: class 'candy-cane-bar' cần màu nền trong suốt hoặc gradient đè lên. 
-            // Ở đây ta dùng bg-color cơ bản, hiệu ứng sọc sẽ đè lên nhờ CSS
-            bar.className = `h-full rounded-full flex items-center justify-end pr-0 transition-all duration-1000 relative candy-cane-bar ${selected.bgClass}`;
-            
-            // 3. Cập nhật icon trên thanh
+            bar.className = `h-full rounded-full flex items-center justify-end pr-0 transition-all duration-1000 relative loading-stripe ${selected.bgClass}`;
             iconElem.className = `fas ${selected.icon}`;
 
-            // 4. Cập nhật % text
             percentText.innerText = selected.pct + '%';
-            percentText.className = `font-extrabold text-2xl transition-all duration-500 ${selected.textColor}`;
+            percentText.className = `font-extrabold text-2xl transition-all duration-500 font-mono ${selected.textColor}`;
 
-            // 5. Animation đổi text tâm trạng
             statusText.style.opacity = '0';
             statusText.style.transform = 'translateY(10px)';
-            
+
             setTimeout(() => {
                 statusText.innerHTML = `<i class="fas ${selected.icon} mr-1"></i> "${selected.text}"`;
-                statusText.className = `text-sm font-bold italic transition-all duration-500 flex items-center justify-center gap-2 ${selected.textColor}`;
+                statusText.className = `text-sm font-bold italic transition-all duration-500 flex items-center justify-center gap-2 font-mono ${selected.textColor}`;
                 statusText.style.opacity = '1';
                 statusText.style.transform = 'translateY(0)';
             }, 300);
 
-            // Reset đếm ngược
             countdownVal = 30;
         }
 
-        // Chạy ngay lần đầu
         updateEnergyStatus();
-
-        // Loop 30s update trạng thái
         setInterval(updateEnergyStatus, 30000);
-
-        // Loop 1s update số đếm ngược
         setInterval(() => {
-            if(countdownVal > 0) countdownVal--;
+            if (countdownVal > 0) countdownVal--;
             document.getElementById('next-update').innerText = countdownVal;
         }, 1000);
     </script>
 </body>
+
 </html>
