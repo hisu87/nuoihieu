@@ -12,7 +12,7 @@ Giải Cứu Hiếu Dev • Noel 2025 🎄
 
 🔗 Live: hisu87.github.io/nuoihieu/
 
-<img src="logo.png" alt="Nuoihieu Logo" width="200" />
+<img src="assets/logo.png" alt="Nuoihieu Logo" width="200" />
 
 </div>
 
